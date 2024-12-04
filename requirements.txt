@@ -10,6 +10,7 @@ flash==1.0.3
 Flask==3.1.0
 Flask-Mail==0.10.0
 git-filter-repo==2.47.0
+gunicorn==23.0.0
 h11==0.14.0
 httpcore==1.0.7
 httpx==0.27.2
@@ -20,6 +21,7 @@ jiter==0.8.0
 Markdown==3.7
 MarkupSafe==3.0.2
 openai==1.55.3
+packaging==24.2
 pdfkit==1.0.0
 pillow==11.0.0
 pydantic==2.10.2
