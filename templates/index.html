@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Logo Evaluator</title>
+    <!-- Link Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <!-- Link CSS file -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="upload-card text-center">
+            <h1 class="brand-title">Upload Your Logo</h1>
+            <p class="text-muted">Get instant feedback on your design!</p>
+            <form action="/upload" method="POST" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <input type="file" class="form-control" name="file" id="file" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Evaluate</button>
+            </form>
+        </div>
+    </div>
+    <!-- Link JS file -->
+    <script src="{{ url_for('static', filename='scripts.js') }}"></script>
+</body>
+</html>
