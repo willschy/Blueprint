@@ -64,7 +64,9 @@ def branding_form():
                 email = data.get('email', '')
 
                 # Log submission
-                with open("submissions.txt", "a") as f:
+                import os
+                file_path = os.path.join(os.path.dirname(__file__), "submissions.txt")
+                with open(file_path, "a") as f:
                     f.write(f"[{datetime.now()}] Name: {company_name}, Email: {email}\n")
 
                 response = client.chat.completions.create(
