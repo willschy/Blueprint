@@ -62,9 +62,9 @@ def branding_form():
                 company_description = data.get('company_description', '')
                 email = data.get('email', '')
 
-                # Log submission
-                file_path = os.path.join(os.path.dirname(__file__), "submissions.txt")
-                with open(file_path, "a") as f:
+                # Updated logging code to use environment variable
+                log_path = os.getenv('LOG_PATH', 'submissions.txt')  # Default to 'submissions.txt' if no env var set
+                with open(log_path, "a") as f:
                     f.write(f"[{datetime.now()}] Name: {company_name}, Email: {email}\n")
 
                 response = client.chat.completions.create(
