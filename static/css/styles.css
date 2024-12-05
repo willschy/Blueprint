@@ -217,58 +217,6 @@ input:focus, textarea:focus {
     cursor: not-allowed;
 }
 
-/* Modal Styles */
-.modal-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-}
-
-.modal-overlay.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.modal {
-    background: var(--color-white);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    width: 90%;
-    max-width: 500px;
-    position: relative;
-    transform: translateY(-20px);
-    transition: transform 0.3s ease;
-}
-
-.modal-overlay.active .modal {
-    transform: translateY(0);
-}
-
-.modal-close {
-    position: absolute;
-    top: var(--spacing-sm);
-    right: var(--spacing-sm);
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--color-gray);
-}
-
-.modal-close:hover {
-    color: var(--color-black);
-}
-
 /* Results Section */
 .results-section.hidden {
     display: none;
@@ -278,7 +226,7 @@ input:focus, textarea:focus {
     max-width: 800px;
     margin: 0 auto;
     margin-top: var(--spacing-xl);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-xs);
 }
 
 /* Insights Styling */
@@ -286,6 +234,8 @@ input:focus, textarea:focus {
     font-family: var(--font-body);
     line-height: 1.8;
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
 }
 
 .insight-section h1,
@@ -308,6 +258,11 @@ input:focus, textarea:focus {
 
 .insight-section li {
     margin-bottom: 8px;
+}
+
+.insight-section .button {
+    max-width: 100%;
+    margin: var(--spacing-md) auto 0;
 }
 
 /* Email Prompt */
@@ -357,7 +312,7 @@ input:focus, textarea:focus {
     }
 
     .insight-section {
-        padding: var(--spacing-md);
+        padding: var(--spacing-xs);
     }
 }
 
