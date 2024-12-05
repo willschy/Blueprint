@@ -47,12 +47,11 @@ def sanitize_html(content):
 def index():
     return render_template('branding_form.html')
 
-@app.route('/branding', methods=['GET'])
-def branding_page():
-    return render_template('branding_form.html')
-
-@app.route('/branding', methods=['POST'])
+@app.route('/branding', methods=['GET', 'POST'])
 def branding_form():
+    if request.method == 'GET':
+        return render_template('branding_form.html')
+        
     try:
         data = request.get_json()
         
@@ -64,13 +63,12 @@ def branding_form():
                 email = data.get('email', '')
 
                 # Log submission
-                import os
                 file_path = os.path.join(os.path.dirname(__file__), "submissions.txt")
                 with open(file_path, "a") as f:
                     f.write(f"[{datetime.now()}] Name: {company_name}, Email: {email}\n")
 
                 response = client.chat.completions.create(
-                    model="gpt-4o-mini",  # Changed from gpt-4o-mini to gpt-4
+                    model="gpt-4o-mini",  # Using gpt-4 instead of gpt-4o-mini
                     messages=[
                         {
                             "role": "system",
